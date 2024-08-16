@@ -38,33 +38,29 @@ int main() {
 
     while (true) {
         if (!gpio_get(BTN_PIN)) {
-            if (led == 0) {
-                gpio_put(LED_PIN, 1);
-                led = 1;
-                sleep_ms(50);
-                for (int i = 0; i < 512; i++) {
+            gpio_put(LED_PIN, 1);
+            sleep_ms(50);
+            for (int i = 0; i < 512; i++) {
 
-                    gpio_put(A, 1);
-                    sleep_ms(5);
-                    gpio_put(A,0);
-                    
-                    gpio_put(B, 1);
-                    sleep_ms(5);
-                    gpio_put(B, 0);
-                    
-                    gpio_put(C, 1);
-                    sleep_ms(5);
-                    gpio_put(C, 0);
+                gpio_put(A, 1);
+                sleep_ms(5);
+                gpio_put(A,0);
                 
-                    gpio_put(D, 1);
-                    sleep_ms(5);
-                    gpio_put(D, 0);
-                    
-                    
-                }
-                led = 0;
-                gpio_put(LED_PIN, 0);
+                gpio_put(B, 1);
+                sleep_ms(5);
+                gpio_put(B, 0);
+                
+                gpio_put(C, 1);
+                sleep_ms(5);
+                gpio_put(C, 0);
+            
+                gpio_put(D, 1);
+                sleep_ms(5);
+                gpio_put(D, 0);
+                
+                
             }
+            gpio_put(LED_PIN, 0);
         }
     }
 }
