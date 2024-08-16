@@ -33,8 +33,6 @@ int main() {
     gpio_set_dir(B, GPIO_OUT);
     gpio_set_dir(C, GPIO_OUT);
     gpio_set_dir(D, GPIO_OUT);
-    
-    int led = 0;
 
     while (true) {
         if (!gpio_get(BTN_PIN)) {
